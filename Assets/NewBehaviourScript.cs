@@ -50,6 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
             if(Input.GetKeyDown(KeyCode.Escape)){
                 SwitchScene();
             }
@@ -111,8 +112,10 @@ public class NewBehaviourScript : MonoBehaviour
                 
                 for(int i=Tails.Count;i>2;i--){
                     Tails[i-1].transform.position=new Vector3(Tails[i-2].transform.position.x, Tails[i-2].transform.position.y, transform.position.z);
+                    Tails[i-1].transform.rotation=Tails[i-2].transform.rotation;
                 }
                 Tail.transform.position= new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                Tail.transform.rotation=transform.rotation;
                 DeltaTimeSum=0;
                 if (keyw)
                 {
